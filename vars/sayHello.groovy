@@ -1,10 +1,8 @@
 #!/usr/bin/env groovy
 def call(String name = 'human') {
   echo "Hello, ${name}."
-  def printParams() {
-    env.getEnvironment().each { name, value -> println "Name: $name -> Value $value" }
-  }
-  printParams()
+
+
   
   def url = new URL('http://google.de')
   def connection = url.openConnection()
@@ -15,4 +13,8 @@ def call(String name = 'human') {
     println connection.lastModified
     connection.headerFields.each { println "> ${it}"}
   }
+}
+
+def printParams() {
+  env.getEnvironment().each { name, value -> println "Name: $name -> Value $value" }
 }
