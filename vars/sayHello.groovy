@@ -2,9 +2,13 @@
 
 def call(String name = 'human') {
   echo "Hello, ${name}."
-println new URL( "https://query.yahooapis.com/v1/public/yql?q=" +
-        URLEncoder.encode(
-                "select wind from weather.forecast where woeid in " +
-                        "(select woeid from geo.places(1) where text='chicago, il')",
-                'UTF-8' ) ).text
+  def url = new URL('http://groovy.codehaus.org/')
+  def connection = url.openConnection()
+  connection.requestMethod = 'GET'
+  if (connection.responseCode == 200) {
+    println connection.content.text
+    println connection.contentType
+    println connection.lastModified
+    connection.headerFields.each { println "> ${it}"}
+  }
 }
