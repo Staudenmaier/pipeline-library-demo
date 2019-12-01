@@ -4,7 +4,7 @@ def call(String name = 'human') {
   echo "-----------------------------"
   echo "${env.JOB_NAME}"
   echo "-----------------------------"
-  sh "curl -H "Content-Type: application/json" -XPOST "http://10.243.180.253:12003/tes123" -d "{ \"field\" : \"value\"}""
+  sh 'curl -H "Content-Type: application/json" -XPOST "http://10.243.180.253:12003/tes123" -d "{ \"field\" : \"value\"}"'
   echo "-----------------------------"
 
   
