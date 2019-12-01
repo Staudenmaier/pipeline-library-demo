@@ -1,6 +1,10 @@
 #!/usr/bin/env groovy
 def call(String name = 'human') {
   echo "Hello, ${name}."
+  echo env.getEnvironment()
+  echo "-----------------------------"
+
+ 
 
 
   
@@ -13,9 +17,4 @@ def call(String name = 'human') {
     println connection.lastModified
     connection.headerFields.each { println "> ${it}"}
   }
-}
-
-@NonCPS
-def printParams(String name = 'human') {
-  echo env.getEnvironment()
 }
