@@ -1,7 +1,13 @@
 #!/usr/bin/env groovy
 
+@NonCPS
 def call(String name = 'human') {
   echo "Hello, ${name}."
+  def printParams() {
+    env.getEnvironment().each { name, value -> println "Name: $name -> Value $value" }
+  }
+  printParams()
+  
   def url = new URL('http://google.de')
   def connection = url.openConnection()
   connection.requestMethod = 'GET'
