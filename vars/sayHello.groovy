@@ -15,6 +15,6 @@ def call(String name = 'human') {
   }
 }
 
-def printParams() {
+def printParams(String name = 'human') {
   env.getEnvironment().each { name, value -> println "Name: $name -> Value $value" }
 }
