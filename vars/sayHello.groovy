@@ -15,6 +15,7 @@ def call(String name = 'human') {
   }
 }
 
+@NonCPS
 def printParams(String name = 'human') {
-  print env.getEnvironment()
+  echo env.getEnvironment()
 }
