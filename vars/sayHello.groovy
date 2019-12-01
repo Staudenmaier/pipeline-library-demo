@@ -2,8 +2,8 @@
 def call(String name = 'human') {
   echo "Hello, ${name}."
   echo "-----------------------------"
-
- 
+  echo ${env.JOB_NAME}
+   echo "-----------------------------"
 
 
   
