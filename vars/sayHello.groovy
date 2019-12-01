@@ -1,6 +1,4 @@
 #!/usr/bin/env groovy
-
-@NonCPS
 def call(String name = 'human') {
   echo "Hello, ${name}."
   def printParams() {
