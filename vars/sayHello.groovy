@@ -3,8 +3,9 @@ def call(String name = 'human') {
   echo "Hello, ${name}."
   echo "-----------------------------"
   echo "${env.JOB_NAME}"
-   echo "-----------------------------"
-
+  echo "-----------------------------"
+  sh "curl -XPUT 'http://10.243.180.253:12003/twitter/tweet/1' -d 'hello'"
+  echo "-----------------------------"
 
   
   def url = new URL('http://google.de')
