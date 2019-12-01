@@ -2,7 +2,7 @@
 
 def call(String name = 'human') {
   echo "Hello, ${name}."
-  def url = new URL('http://groovy.codehaus.org/')
+  def url = new URL('http://google.de')
   def connection = url.openConnection()
   connection.requestMethod = 'GET'
   if (connection.responseCode == 200) {
